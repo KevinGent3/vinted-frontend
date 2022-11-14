@@ -7,7 +7,7 @@ const Hero = () => {
       <img src={hero} classname="banner" alt="banner" />
       <div className="hero-card">
         <h1>Prêts à faire du tri dans vos placards?</h1>
-        <a href="">Commencer à vendre</a>
+        <Link to="/publish">Commencez à vendre</Link>
       </div>
       <img src={tear} className="tear" alt="" />
     </div>

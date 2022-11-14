@@ -5,6 +5,7 @@ import axios from "axios";
 // import des components
 import { Link } from "react-router-dom";
 import Hero from "../components/Hero";
+import OfferCard from "../components/OfferCard";
 
 const Home = () => {
   const [data, setData] = useState({});
@@ -29,34 +30,11 @@ const Home = () => {
   ) : (
     <div>
       <Hero></Hero>
-      {data.offers.map((offer, index) => {
-        return (
-          <Link to={`/offer/${offer._id}`} key={offer._id}>
-            {offer.owner.account.avatar ? (
-              <img
-                src={offer.owner.account.avatar.secure_url}
-                alt="owner avatar"
-              />
-            ) : null}
-            <span>{offer.owner.account.username}</span>
-
-            {offer.owner.account.avatar ? (
-              <img src={offer.owner.account.avatar.secure_url} alt="" />
-            ) : null}
-            <p>{offer.product_name}</p>
-            <img src={offer.product_image.secure_url} alt="" />
-            <p>{offer.product_price} €</p>
-            {offer.product_details.map((elem, index) => {
-              return (
-                <div key={index}>
-                  {elem.TAILLE && <p>{elem.TAILLE}</p>}
-                  {elem.MARQUE && <p>{elem.MARQUE}</p>}
-                </div>
-              );
-            })}
-          </Link>
-        );
-      })}
+      <div className="home-container">
+        {data.offers.map((offer, index) => {
+          return <OfferCard key={offer._id} offer={offer}></OfferCard>;
+        })}
+      </div>
     </div>
   );
 };

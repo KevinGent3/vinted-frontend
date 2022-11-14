@@ -2,9 +2,10 @@ import "./App.css";
 import { useState } from "react";
 //import des packages
 import Header from "./components/Header";
-import Signup from "./components/Signup";
-import Login from "./components/Login";
+import Signup from "./Pages/Signup";
+import Login from "./Pages/Login";
 import Cookies from "js-cookie";
+import Publish from "./Pages/Publish";
 //import du router
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
@@ -27,7 +28,7 @@ function App() {
     <Router>
       <Header
         handleToken={handleToken}
-        userTOken={userToken}
+        userToken={userToken}
         className="container"
       ></Header>
       <Routes>
@@ -35,6 +36,10 @@ function App() {
         <Route path="/offer/:id" element={<Offer />} />
         <Route path="/signup" element={<Signup handleToken={handleToken} />} />
         <Route path="/login" element={<Login handleToken={handleToken} />} />
+        <Route
+          path="/publish"
+          element={<Publish userToken={userToken} />}
+        ></Route>
       </Routes>
     </Router>
   );

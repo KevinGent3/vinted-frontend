@@ -29,7 +29,9 @@ const Header = ({ handleToken, userToken }) => {
             Se déconnecter
           </button>
         )}
-        <button className="sell-btn">Vends tes articles</button>
+        <Link to="/publish" className="sell-btn">
+          Vends tes articles
+        </Link>
       </div>
     </header>
   );

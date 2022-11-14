@@ -36,9 +36,10 @@ header img {
 header .searchbar {
   border-radius: 5px;
   border: none;
+
   padding: 10px;
   width: 50%;
-  height: 5vh;
+  height: 1vh;
 }
 
 header button {
@@ -46,11 +47,21 @@ header button {
   margin-right: 10px;
 }
 
-header .signup-btn {
-  color: green;
+header .connect-btn {
+  color: #007782;
   background-color: white;
   margin-right: 10px;
-  border: 1px solid green;
+  border: 1px solid #007782;
+  border-radius: 5px;
+  cursor: pointer;
+  padding: 5px 10px;
+  font-size: 14px;
+}
+header .signup-btn {
+  color: #007782;
+  background-color: white;
+  margin-right: 10px;
+  border: 1px solid #007782;
   border-radius: 5px;
   cursor: pointer;
   padding: 5px 10px;
@@ -64,9 +75,9 @@ header .disconnect-btn {
 }
 header .sell-btn {
   padding: 5px 10px;
-  background-color: green;
+  background-color: #007782;
   color: white;
-  border: 1px solid green;
+  border: 1px solid #007782;
   border-radius: 5px;
   cursor: pointer;
   font-size: 14px;
@@ -119,4 +130,75 @@ header .sell-btn {
   width: 50vw;
   height: 70vh;
   margin: 0 auto;
+}
+
+.offer-card-container {
+  margin-bottom: 60px;
+  /* border: solid black 2px; */
+  width: calc(100% / 5 - 80px / 5);
+  box-sizing: border-box;
+  text-decoration: none;
+  color: black;
+}
+.home-container {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 1225px;
+  margin: 0 auto;
+  justify-content: space-between;
+  row-gap: 20px;
+}
+/* Publish page */
+
+.publish-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+.text-input-section {
+  background-color: #fff;
+  margin: 20px 0;
+  box-shadow: 0 0 2px grey;
+}
+.text-input {
+  display: flex;
+  justify-content: space-between;
+  padding: 24px;
+}
+.text-input > input,
+.text-input > textarea {
+  width: 50%;
+  border: none;
+  border-bottom: 1px solid lightgray;
+  color: black;
+  font-size: 16px;
+}
+.checkbox-section {
+  width: 50%;
+}
+.checkbox-section > input {
+  border: none;
+  border-bottom: 1px solid lightgray;
+  color: black;
+  font-family: inherit;
+  font-size: 16px;
+  margin-bottom: 40px;
+}
+.form-button {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.form-button > input {
+  padding: 5px 10px;
+  background-color: #007782;
+  color: white;
+  border: 1px solid #007782;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 14px;
 }
