@@ -4,10 +4,10 @@ import tear from "../assets/images/tear.svg";
 const Hero = () => {
   return (
     <div className="hero-container">
-      <img src={hero} classname="banner" alt="bannière" />
+      <img src={hero} classname="banner" alt="banner" />
       <div className="hero-card">
         <h1>Prêts à faire du tri dans vos placards?</h1>
-        <Link to="/publish">Commencer à vendre</Link>
+        <a href="">Commencer à vendre</a>
       </div>
       <img src={tear} className="tear" alt="" />
     </div>

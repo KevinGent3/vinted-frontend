@@ -32,10 +32,18 @@ const Home = () => {
       {data.offers.map((offer, index) => {
         return (
           <Link to={`/offer/${offer._id}`} key={offer._id}>
-            {/* je n'arrive pas à afficher la clé owner, mon console log ne renvoie rien */}
-            {/* {offer.owner.avatar && (
+            {offer.owner.account.avatar ? (
+              <img
+                src={offer.owner.account.avatar.secure_url}
+                alt="owner avatar"
+                className="hot-offer-avatar"
+              />
+            ) : null}
+            <span>{offer.owner.account.username}</span>
+
+            {offer.owner.account.avatar ? (
               <img src={offer.owner.account.avatar.secure_url} alt="" />
-            )} */}
+            ) : null}
             <p>{offer.product_name}</p>
             <img src={offer.product_image.secure_url} alt="" />
             <p>{offer.product_price} €</p>

@@ -13,14 +13,15 @@ const Header = ({ handleToken, userToken }) => {
               placeholder="Recherche des articles"
             />
             <Link to={"/signup"}>
-              <button>S'inscrire</button>
+              <button className="signup-btn">S'inscrire</button>
             </Link>
             <Link to={"/login"}>
-              <button>Se connecter</button>
+              <button className="connect-btn">Se connecter</button>
             </Link>
           </>
         ) : (
           <button
+            className="disconnect-btn"
             onClick={() => {
               handleToken();
             }}
@@ -28,8 +29,7 @@ const Header = ({ handleToken, userToken }) => {
             Se déconnecter
           </button>
         )}
-
-        <button>Vends tes articles</button>
+        <button className="sell-btn">Vends tes articles</button>
       </div>
     </header>
   );
