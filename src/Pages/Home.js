@@ -36,7 +36,6 @@ const Home = () => {
               <img
                 src={offer.owner.account.avatar.secure_url}
                 alt="owner avatar"
-                className="hot-offer-avatar"
               />
             ) : null}
             <span>{offer.owner.account.username}</span>
