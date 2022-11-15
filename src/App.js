@@ -6,6 +6,7 @@ import Signup from "./Pages/Signup";
 import Login from "./Pages/Login";
 import Cookies from "js-cookie";
 import Publish from "./Pages/Publish";
+import Payment from "./Pages/Payment";
 //import du router
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
@@ -15,12 +16,15 @@ import Offer from "./Pages/Offer";
 
 function App() {
   const [userToken, setUserToken] = useState(Cookies.get("userToken") || null);
-  const handleToken = (token) => {
+  const [userId, setUserId] = useState(Cookies.get("userId") || null);
+  const handleToken = (token, id) => {
     if (token) {
       Cookies.set("userToken", token, { expires: 7 });
+      Cookies.set("userId", id);
       setUserToken(token);
     } else {
-      Cookies.remove("token");
+      Cookies.remove("userToken");
+      Cookies.remove("userId");
       setUserToken(null);
     }
   };
@@ -40,6 +44,7 @@ function App() {
           path="/publish"
           element={<Publish userToken={userToken} />}
         ></Route>
+        <Route path="/payment" element={<Payment userToken={userToken} />} />
       </Routes>
     </Router>
   );

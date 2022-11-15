@@ -1,4 +1,5 @@
 import axios from "axios";
+import { Navigate } from "react-router-dom";
 import { useState } from "react";
 
 const Publish = ({ userToken }) => {
@@ -35,18 +36,23 @@ const Publish = ({ userToken }) => {
           headers: { authorization: `Bearer ${userToken}` },
         }
       );
+      console.log("Réponse : ", response.data);
     } catch (error) {
       console.log(error.message);
     }
   };
-  return (
+  return userToken ? (
     <div>
       <div className="publish-container">
         <h1>Vends ton article</h1>
 
         <form onSubmit={handleSubmit}>
+          <label htmlFor="file" className="upload-file">
+            Ajouter une photo
+          </label>
           <input
             type="file"
+            id="file"
             onChange={(event) => {
               setPicture(event.target.files[0]);
             }}
@@ -56,8 +62,6 @@ const Publish = ({ userToken }) => {
               <h4>Titre</h4>
               <input
                 type="text"
-                id="title"
-                name="title"
                 placeholder="ex. Chemise Sézane verte"
                 onChange={(event) => setTitle(event.target.value)}
               />
@@ -65,8 +69,6 @@ const Publish = ({ userToken }) => {
             <div className="text-input">
               <h4>Décris ton article</h4>
               <textarea
-                id="description"
-                name="description"
                 row="20"
                 placeholder="ex.porté quelque fois, taille correctement"
                 onChange={(event) => setDescription(event.target.value)}
@@ -78,8 +80,6 @@ const Publish = ({ userToken }) => {
               <h4>Marque</h4>
               <input
                 type="text"
-                id="brand"
-                name="selecbrandtedBrand"
                 placeholder="ex. Zara"
                 onChange={(event) => setBrand(event.target.value)}
               />
@@ -88,8 +88,6 @@ const Publish = ({ userToken }) => {
               <h4>Taille</h4>
               <input
                 type="text"
-                id="size"
-                name="size"
                 placeholder="ex : L / 40 / 12"
                 onChange={(event) => setSize(event.target.value)}
               />
@@ -98,8 +96,6 @@ const Publish = ({ userToken }) => {
               <h4>Couleur</h4>
               <input
                 type="text"
-                id="color"
-                name="color"
                 placeholder="ex : Fushia"
                 onChange={(event) => setColor(event.target.value)}
               />
@@ -108,8 +104,6 @@ const Publish = ({ userToken }) => {
               <h4>Etat</h4>
               <input
                 type="text"
-                id="condition"
-                name="condition"
                 placeholder="ex : Neuf avec étiquette"
                 onChange={(event) => setCondition(event.target.value)}
               />
@@ -118,8 +112,6 @@ const Publish = ({ userToken }) => {
               <h4>Lieu</h4>
               <input
                 type="text"
-                id="city"
-                name="city"
                 placeholder="ex : Paris"
                 onChange={(event) => setCity(event.target.value)}
               />
@@ -131,18 +123,11 @@ const Publish = ({ userToken }) => {
               <div className="checkbox-section">
                 <input
                   type="text"
-                  id="price"
-                  name="price"
                   placeholder="0.00 €"
                   onChange={(event) => setPrice(event.target.value)}
                 />
                 <div className="checkbox-input">
-                  <input
-                    type="checkbox"
-                    name="exchange"
-                    id="exchange"
-                    value="exchange"
-                  />
+                  <input type="checkbox" value="exchange" />
                   <span>Je suis intéressé(e) par les échanges</span>
                 </div>
               </div>
@@ -154,6 +139,8 @@ const Publish = ({ userToken }) => {
         </form>
       </div>
     </div>
+  ) : (
+    <Navigate to="/login" />
   );
 };
 

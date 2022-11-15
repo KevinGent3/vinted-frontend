@@ -5,7 +5,7 @@ const OfferCard = ({ offer }) => {
       <Link to={`/offer/${offer._id}`} className="offer-card-container">
         <div className="offer-card">
           <div className="owner">
-            {offer.owner ? <p>{offer.owner.account.username}</p> : null}
+            {/* {offer.owner ? <p>{offer.owner.account.username}</p> : null} */}
           </div>
           <div>
             <img

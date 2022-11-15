@@ -4,7 +4,10 @@ const Header = ({ handleToken, userToken }) => {
   return (
     <header>
       <div className="wrapper">
-        <img src={logo} alt="logo vinted" />
+        <Link to="/">
+          <img src={logo} alt="logo vinted" />
+        </Link>
+
         {!userToken ? (
           <>
             <input
@@ -29,7 +32,7 @@ const Header = ({ handleToken, userToken }) => {
             Se déconnecter
           </button>
         )}
-        <Link to="/publish" className="sell-btn">
+        <Link to={userToken ? "/publish" : "/login"} className="sell-btn">
           Vends tes articles
         </Link>
       </div>

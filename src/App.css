@@ -107,7 +107,7 @@ header .sell-btn {
 }
 .hero-container .banner {
   width: 100vw;
-  height: 520px;
+  height: 800px;
   object-fit: cover;
 }
 .hero-container .tear {
@@ -121,15 +121,8 @@ header .sell-btn {
   font-size: 16px;
   margin-bottom: 15px;
   color: white;
-  background-color: green;
+  background-color: #007782;
   border-radius: 10px;
-}
-.signup-container {
-  display: flex;
-  flex-direction: column;
-  width: 50vw;
-  height: 70vh;
-  margin: 0 auto;
 }
 
 .offer-card-container {
@@ -148,7 +141,74 @@ header .sell-btn {
   justify-content: space-between;
   row-gap: 20px;
 }
-/* Publish page */
+
+/* OFFER PAGE */
+
+.offer-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  background-color: var(--light-grey-vinted);
+  margin: 50px;
+}
+
+.main-picture img {
+  max-height: 500px;
+  max-width: 500px;
+  object-fit: cover;
+}
+.main-infos {
+  width: 50%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+}
+.infos-content {
+  display: flex;
+  flex-direction: column;
+  width: 400px;
+  height: 600px;
+  padding: 50px 50px;
+}
+.infos-top {
+  height: 50%;
+  border-bottom: 1px solid lightgray;
+}
+
+.product-details {
+  display: flex;
+  flex-direction: column;
+}
+.product-price {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.infos-bottom {
+  height: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding-top: 20px;
+}
+
+.avatar {
+  height: 30px;
+  width: 30px;
+  border-radius: 50%;
+  margin-right: 10px;
+  object-fit: cover;
+  /* border: 2px solid var(--vert-vinted); */
+}
+
+.infos-owner {
+  display: flex;
+  align-items: center;
+}
+/* PUBLISH PAGE */
 
 .publish-container {
   display: flex;
@@ -158,7 +218,6 @@ header .sell-btn {
   height: 100%;
 }
 .text-input-section {
-  background-color: #fff;
   margin: 20px 0;
   box-shadow: 0 0 2px grey;
 }
@@ -186,6 +245,13 @@ header .sell-btn {
   font-size: 16px;
   margin-bottom: 40px;
 }
+.publish-container form {
+  display: flex;
+  flex-direction: column;
+  width: 90%;
+  margin: 0 auto;
+  font-size: 14px;
+}
 .form-button {
   display: flex;
   justify-content: flex-end;
@@ -194,6 +260,84 @@ header .sell-btn {
 }
 
 .form-button > input {
+  padding: 5px 10px;
+  background-color: #007782;
+  color: white;
+  border: 1px solid #007782;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.upload-file {
+  color: #007782;
+  font-weight: 700;
+  margin: 0 auto;
+  border: 1px solid #007782;
+  padding: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+/* SIGNUP PAGE */
+
+.signup {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.signup-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 25%;
+  margin-bottom: 100px;
+}
+.signup-container {
+  display: flex;
+  flex-direction: column;
+  margin-top: 20px;
+}
+
+.signup-container input {
+  height: 35px;
+  margin: 20px 0;
+  border: none;
+  border-bottom: 1px solid #fcced3;
+  font-size: 16px;
+}
+.checkbox {
+  display: flex;
+  flex-direction: column;
+  height: 20px;
+  justify-content: space-between;
+}
+
+/* PAYMENT */
+
+.payment-container {
+  width: 50vw;
+  margin: 0 auto;
+  padding: 40px 20px;
+}
+
+.payment-content {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding: 20px;
+}
+.payment-content > div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  line-height: 30px;
+  width: 100%;
+}
+
+.pay-btn {
   padding: 5px 10px;
   background-color: #007782;
   color: white;

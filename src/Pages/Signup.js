@@ -28,41 +28,50 @@ const Signup = ({ handleToken }) => {
     }
   };
   return (
-    <form className="signup-container" onSubmit={handleSubmit}>
-      <h1>S'inscrire</h1>
-      <input
-        type="text"
-        placeholder="email"
-        value={email}
-        onChange={(event) => {
-          setEmail(event.target.value);
-        }}
-      />
-      <input
-        onChange={(event) => {
-          setUsername(event.target.value);
-        }}
-        type="text"
-        placeholder="username"
-        value={username}
-      />
-      <input
-        onChange={(event) => {
-          setPassword(event.target.value);
-        }}
-        type="password"
-        placeholder="password"
-        value={password}
-      />
-      <input
-        type="checkbox"
-        checked={newsletter}
-        onChange={() => {
-          setNewsletter(!newsletter);
-        }}
-      />
-      <input type="submit" value="S'inscrire" />
-    </form>
+    <div className="signup">
+      <div className="signup-content">
+        <h1>S'inscrire</h1>
+        <form className="signup-container" onSubmit={handleSubmit}>
+          <input
+            type="text"
+            placeholder="email"
+            value={email}
+            onChange={(event) => {
+              setEmail(event.target.value);
+            }}
+          />
+          <input
+            onChange={(event) => {
+              setUsername(event.target.value);
+            }}
+            type="text"
+            placeholder="username"
+            value={username}
+          />
+          <input
+            onChange={(event) => {
+              setPassword(event.target.value);
+            }}
+            type="password"
+            placeholder="password"
+            value={password}
+          />
+          <div className="checkbox">
+            <input
+              type="checkbox"
+              value="s'inscrire"
+              checked={newsletter}
+              onChange={() => {
+                setNewsletter(!newsletter);
+              }}
+            />
+            <span> S'inscrire à la newsletter</span>
+          </div>
+
+          <input type="submit" value="S'inscrire" />
+        </form>
+      </div>
+    </div>
   );
 };
 export default Signup;
