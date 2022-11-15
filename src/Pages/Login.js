@@ -23,26 +23,30 @@ const Login = ({ handleToken }) => {
     }
   };
   return (
-    <form className="signup-container" onClick={handleSubmit}>
-      <h1>Se connecter</h1>
-      <input
-        type="email"
-        value={email}
-        placeholder="email"
-        onChange={(event) => {
-          setEmail(event.target.value);
-        }}
-      />
-      <input
-        type="password"
-        placeholder="password"
-        value={password}
-        onChange={(event) => {
-          setPassword(event.target.value);
-        }}
-      />
-      <input type="submit" value="connexion" />
-    </form>
+    <div className="signup">
+      <div className="signup-content">
+        <h1>Se connecter</h1>
+        <form className="signup-container" onClick={handleSubmit}>
+          <input
+            type="email"
+            value={email}
+            placeholder="email"
+            onChange={(event) => {
+              setEmail(event.target.value);
+            }}
+          />
+          <input
+            type="password"
+            placeholder="password"
+            value={password}
+            onChange={(event) => {
+              setPassword(event.target.value);
+            }}
+          />
+          <input type="submit" value="connexion" />
+        </form>
+      </div>
+    </div>
   );
 };
 export default Login;
